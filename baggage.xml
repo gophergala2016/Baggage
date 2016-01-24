@@ -1,11 +1,11 @@
 <project version="0.1">
     <title>여행1</title>
     <members>
-        <member name="김재훈1"/>
-        <member name="김재훈2"/>
+        <member name="user1"/>
+        <member name="user2"/>
 	</members>
 	<items>
-        <item name="상비약" owner="김재훈1"/>
-        <item name="드라이" owner="김재훈2"/>
+        <item name="drinking" owner="user1"/>
+        <item name="bread" owner="user2"/>
 	</items>
 </project>

@@ -8,7 +8,8 @@ import (
 )
 
 type Parser struct {
-	path string
+	Path string
+	Prj  Project
 }
 
 type Project struct {
@@ -41,12 +42,12 @@ type Item struct {
 }
 
 func NewParser(p string) *Parser {
-	return &Parser{path: p}
+	return &Parser{Path: p, Prj: Project{}}
 }
 
 func (p *Parser) Parse() {
 
-	f, err := os.Open(p.path)
+	f, err := os.Open(p.Path)
 	if err != nil {
 		panic(err)
 	}
@@ -56,12 +57,12 @@ func (p *Parser) Parse() {
 		panic(err)
 	}
 
-	prj := Project{}
-	err = xml.Unmarshal(data, &prj)
+	//p.Prj = Project{}
+	err = xml.Unmarshal(data, &p.Prj)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(prj)
+	fmt.Println(p.Prj)
 
 }
